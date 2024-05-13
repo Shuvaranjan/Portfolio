@@ -9,21 +9,47 @@ html {
     scroll-behavior: smooth;
 }
 
-body::-webkit-scrollbar {
-    display: none;
+body {
+   overflow-x: hidden;
 }
 
 
 .hero {
     height: 100vh;
     width: 100%;
-    background-image: url(images/BlackPanther.jpg);
-    /*background-color: #191919;*/
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-
+    /*background-image: url(images/1.png);*/
+    background: linear-gradient(45deg, black, rgb(255, 0, 0), rgb(0, 26, 255), rgb(43, 255, 0));
+    background-size: 300% 300%;
+    animation: color 10s ease-in-out infinite;
+    
 }
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+.hero .img-box img{
+   margin-top: 100px;
+   margin-right: 20px;
+   border-radius: 50%;
+   width: 420px;
+   height: 80%;
+   transition: 0.5s ease;
+   position: absolute;
+   
+  
+  
+   right: 0;
+  
+   box-shadow: 0 0 45px rgb(0, 0, 0), 0 0 50px rgb(151, 151, 151);
+}
+
 
 
 
@@ -34,7 +60,15 @@ nav {
     padding-top: 20px;
     padding-left: 8%;
     padding-right: 8%;
-
+    padding-bottom: 10px;
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid transparent;
+    z-index: 100;
+    
+   
 }
 
 .logo {
@@ -42,6 +76,12 @@ nav {
     font-size: 35px;
     letter-spacing: 1px;
     cursor: pointer;
+    transition: 0.3s;
+}
+.logo:hover{
+    transform: scale(1.1);
+    color: cyan;
+    text-shadow: 0 0 25px red, 0 0 50px red;
 }
 
 span {
@@ -133,6 +173,23 @@ nav .active::after {
     left: 8%;
     transform: translateY(-50%);
 }
+.download{
+   text-decoration: none;
+   background: #f9004f;
+   color: whitesmoke;
+   border: 2px transparent;
+   font-weight: bold;
+   font-size: 15px;
+   padding: 15px 15px;
+   border-radius: 25px;
+   box-shadow: 0px 0px 25px #ffffff, 0px 0px 25px #858585;
+   transition: 0.5s;
+   
+}
+.download:hover{
+    box-shadow: 0px 0px 0px #ffffff, 0px 0px 0px #858585;
+   
+}
 
 .java {
     color: white;
@@ -157,10 +214,11 @@ h1 {
     background-image: linear-gradient(#ffffff, #ffffff);
     background-repeat: no-repeat;
     -webkit-background-clip: text;
+    -webkit-text-stroke: 0.2px #ffffff;
     background-position: 0px, 0;
     margin: 20px 0px 20px;
-    font-size: 60px;
-    animation: animateText 6s linear infinite;
+    font-size: 70px;
+    animation: animateText 8s linear infinite;
 
 }
 
@@ -188,7 +246,7 @@ h3 {
 h4 {
     color: rgba(255, 255, 255, 0.8);
     letter-spacing: 2px;
-    font-size: 20px;
+    font-size: 22px;
 
 }
 
@@ -235,9 +293,14 @@ h4 {
 
 .about img {
     
-    height: 660px;
-    width: 440px;
+    height: 600px;
+    width: 400px;
     transition: 1s;
+
+    margin-top: 0px;
+    border-radius: 40px 0px 40px 0px;
+  
+    box-shadow: 0px 0px 5px #000000, 0px 0px 20px #858585;
 
 
 }
@@ -247,7 +310,7 @@ h4 {
     transition: 1s;
     cursor: pointer;
     transform: translateX(18px);
-    box-shadow: 0px 0px 5px #000000, 0px 0px 20px #858585;
+    box-shadow: 0px 0px 5px #2300e7, 0px 0px 20px #2a00fd;
     transition: 1s;
 }
 
@@ -427,10 +490,11 @@ h5 {
 
 .projects-container .projects-box {
     position: relative;
-    border-radius: 2rem;
+    border-radius: 1rem;
     box-shadow: 0 0 0rem rgb(16, 16, 16);
     overflow: hidden;
     display: flex;
+    
 
 }
 
@@ -590,15 +654,15 @@ h5 {
 }
 
 .contact-icons i {
-    height: 45px;
+    height: 20px;
     width: 45px;
 
     color: rgb(255, 255, 255);
     display: inline-block;
     justify-content: center;
     border-radius: 8px;
-    margin-right: 15px;
-    transition: all .45s ease;
+    margin-right: 2px;
+    transition: all .50s ease;
 
 
 
@@ -608,7 +672,8 @@ h5 {
 .contact-icons i:hover {
 
     color: #0eafe5;
-    transition: 1s;
+    transition: all .45s ease;
+
     text-shadow: 0px 0px 5px #000, 0px 0px 25px #1100ff;
 
 }
@@ -698,5 +763,18 @@ form textarea {
     transform: scale(1.2);
     transition: 0.1s;
     box-shadow: 0px 0px 5px #000, 0px 0px 25px #ffffff;
+
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #0eafe5;
+
+}
+
+::-webkit-scrollbar-track{
+    background-color: #212121;
 
 }
