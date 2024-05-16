@@ -10,7 +10,7 @@ html {
 }
 
 body {
-   overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 
@@ -21,33 +21,46 @@ body {
     background: linear-gradient(45deg, black, rgb(255, 0, 0), rgb(0, 26, 255), rgb(43, 255, 0));
     background-size: 300% 300%;
     animation: color 10s ease-in-out infinite;
-    
+
 }
-@keyframes color{
-    0%{
+
+@keyframes color {
+    0% {
         background-position: 0 50%;
     }
-    50%{
+
+    50% {
         background-position: 100% 50%;
     }
-    100%{
+
+    100% {
         background-position: 0 50%;
     }
 }
-.hero .img-box img{
-   margin-top: 100px;
-   margin-right: 20px;
-   border-radius: 50%;
-   width: 420px;
-   height: 80%;
-   transition: 0.5s ease;
-   position: absolute;
-   
-  
-  
-   right: 0;
-  
-   box-shadow: 0 0 45px rgb(0, 0, 0), 0 0 50px rgb(151, 151, 151);
+
+.hero .img-box img {
+    margin-top: 120px;
+    margin-right: 20px;
+    border-radius: 50%;
+    width: 420px;
+    height: 80%;
+    transition: 0.5s ease;
+    position: absolute;
+    transform: translateY(0px);
+    right: 0;
+    box-shadow: 0 0 45px rgb(0, 0, 0), 0 0 50px rgb(151, 151, 151);
+    animation: float 6s ease-in-out infinite;
+}
+@keyframes float{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-30px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
 
 
@@ -67,8 +80,8 @@ nav {
     backdrop-filter: blur(5px);
     border-bottom: 1px solid transparent;
     z-index: 100;
-    
-   
+
+
 }
 
 .logo {
@@ -78,7 +91,8 @@ nav {
     cursor: pointer;
     transition: 0.3s;
 }
-.logo:hover{
+
+.logo:hover {
     transform: scale(1.1);
     color: cyan;
     text-shadow: 0 0 25px red, 0 0 50px red;
@@ -145,7 +159,15 @@ nav ul li a:hover {
 nav ul li a:hover::after,
 nav .active::after {
     transform: scaleX(1);
+    /* transform-origin: bottom left; */
     transform-origin: bottom left;
+}
+#menu-icon{
+    font-size: 42px;
+    color: whitesmoke;
+    z-index: 1001;
+    cursor: pointer;
+    display: none;
 }
 
 .btn {
@@ -173,22 +195,24 @@ nav .active::after {
     left: 8%;
     transform: translateY(-50%);
 }
-.download{
-   text-decoration: none;
-   background: #f9004f;
-   color: whitesmoke;
-   border: 2px transparent;
-   font-weight: bold;
-   font-size: 15px;
-   padding: 15px 15px;
-   border-radius: 25px;
-   box-shadow: 0px 0px 25px #ffffff, 0px 0px 25px #858585;
-   transition: 0.5s;
-   
+
+.download {
+    text-decoration: none;
+    background: #f9004f;
+    color: whitesmoke;
+    border: 2px transparent;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 15px 15px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 25px #ffffff, 0px 0px 25px #858585;
+    transition: 0.5s;
+
 }
-.download:hover{
+
+.download:hover {
     box-shadow: 0px 0px 0px #ffffff, 0px 0px 0px #858585;
-   
+
 }
 
 .java {
@@ -214,8 +238,8 @@ h1 {
     background-image: linear-gradient(#ffffff, #ffffff);
     background-repeat: no-repeat;
     -webkit-background-clip: text;
-    -webkit-text-stroke: 0.2px #ffffff;
-    background-position: 0px, 0;
+    -webkit-text-stroke: 0.5px #ffffff;
+    background-position: -665px, 0;
     margin: 20px 0px 20px;
     font-size: 70px;
     animation: animateText 8s linear infinite;
@@ -227,7 +251,7 @@ h1 {
     0%,
     95%,
     100% {
-        background-position: -570px 0;
+        background-position: -660px 0;
     }
 
     65%,
@@ -246,7 +270,7 @@ h3 {
 h4 {
     color: rgba(255, 255, 255, 0.8);
     letter-spacing: 2px;
-    font-size: 22px;
+    font-size: 23px;
 
 }
 
@@ -292,14 +316,14 @@ h4 {
 }
 
 .about img {
-    
+
     height: 600px;
     width: 400px;
     transition: 1s;
 
     margin-top: 0px;
     border-radius: 40px 0px 40px 0px;
-  
+
     box-shadow: 0px 0px 5px #000000, 0px 0px 20px #858585;
 
 
@@ -494,7 +518,7 @@ h5 {
     box-shadow: 0 0 0rem rgb(16, 16, 16);
     overflow: hidden;
     display: flex;
-    
+
 
 }
 
@@ -766,15 +790,28 @@ form textarea {
 
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 10px;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     background-color: #0eafe5;
 
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
     background-color: #212121;
 
+}
+
+
+
+nav img{
+    width: 7rem;
+    height: 8rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-bottom: 20px;
 }
